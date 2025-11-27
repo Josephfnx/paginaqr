@@ -1,6 +1,6 @@
 /* Variables CSS para una gestión de colores más fácil */
 :root {
-    --primary-color: #4CAF50; /* Verde principal */
+    --primary-color: #cf1717; /* Verde principal */
     --secondary-color: #8BC34A; /* Verde secundario más claro */
     --accent-color: #FFC107; /* Amarillo para acentos */
     --text-color: #333;
@@ -118,4 +118,5 @@ p {
         max-width: 90%;
         width: auto;
     }
+
 }
