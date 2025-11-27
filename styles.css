@@ -1,0 +1,166 @@
+/* Variables CSS para una gestión de colores más fácil */
+:root {
+    --primary-color: #b50a0a; /* Verde principal */
+    --secondary-color: #bb4343; /* Verde secundario más claro */
+    --accent-color: #FFC107; /* Amarillo para acentos */
+    --text-color: #333;
+    --light-bg: #e8f5e9; /* Fondo muy claro */
+    --white: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* --- Estilos para el encabezado y logo --- */
+
+.main-header {
+    display: flex; /* Permite alinear elementos en una fila */
+    align-items: center; /* Centra verticalmente el logo y el título */
+    justify-content: center; /* Centra el contenido horizontalmente por defecto */
+    position: relative; /* Importante para posicionar elementos internos */
+    padding: 20px 0; /* Espacio arriba y abajo */
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
+}
+
+.logo-univalle {
+    position: absolute; /* Posicionamiento absoluto respecto a .main-header */
+    left: 20px; /* A 20px del borde izquierdo */
+    top: 50%; /* Inicialmente a la mitad de la altura del header */
+    transform: translateY(-50%); /* Ajusta para centrar verticalmente */
+    height: 150px; /* Altura fija para el logo */
+    width: auto; /* Ancho automático para mantener proporción */
+    object-fit: contain; /* Asegura que el logo se vea completo */
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    /* Ajuste para que el texto no choque con el logo en escritorio si el h1 es muy largo */
+    margin-left: 100px; 
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+/* Contenedor principal de los QR */
+.qr-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; 
+    margin-top: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo para cada tarjeta de QR */
+.qr-item {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px var(--shadow-light);
+    max-width: 220px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.qr-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px var(--shadow-hover);
+}
+
+.qr-item img {
+    width: 180px; 
+    height: 180px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.qr-item a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.1em;
+    display: block;
+    padding-top: 5px;
+    transition: color 0.3s ease;
+}
+
+.qr-item a:hover {
+    color: var(--primary-color);
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    /* Ajuste de encabezado para tablets */
+    .main-header {
+        flex-direction: column; /* Apila el logo y el título en móviles */
+        padding-top: 80px; /* Espacio para el logo arriba */
+        justify-content: flex-start; 
+        margin-bottom: 10px;
+    }
+    
+    .logo-univalle {
+        position: absolute;
+        left: 50%; /* Centra el logo horizontalmente */
+        top: 20px; /* A 20px del borde superior */
+        transform: translateX(-50%); /* Ajuste para centrar */
+        height: 60px; /* Reduce un poco el tamaño en móviles */
+    }
+
+    h1 {
+        font-size: 2.2em;
+        margin-top: 10px; /* Espacio entre el logo y el título en móviles */
+        margin-left: 0; /* Remueve el margen de ajuste de escritorio */
+    }
+    
+    p {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+    
+    /* Ajuste de tarjetas para tablets */
+    .qr-container {
+        gap: 20px;
+    }
+    .qr-item {
+        max-width: 180px;
+        padding: 20px;
+    }
+    .qr-item img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajuste de tarjetas para móviles */
+    .qr-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .qr-item {
+        max-width: 90%;
+        width: auto;
+    }
+}
